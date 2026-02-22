@@ -17,6 +17,9 @@ async function startServer(): Promise<void> {
   console.log("Connected To MongoDB");
 
   app.use(express.json());
+  app.get("/ping", (req, res) => {
+    res.send("pong");
+  });
   app.use("/graphql", cors(), express.json(), expressMiddleware(server));
 
   app.listen(serverConfig.PORT, () => {
