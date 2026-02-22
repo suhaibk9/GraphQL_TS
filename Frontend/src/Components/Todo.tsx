@@ -53,7 +53,7 @@ const Todo = (): JSX.Element => {
       cache.writeQuery<GetTodosData>({
         query: GET_TODOS,
         data: {
-          getAllTodos: [...existing.getAllTodos, data.createTodo],
+          getAllTodos: [data.createTodo, ...existing.getAllTodos],
         },
       });
     },
@@ -100,9 +100,7 @@ const Todo = (): JSX.Element => {
       {data?.getAllTodos.map((todo) => (
         <div key={todo.id} style={{ marginBottom: "10px" }}>
           <strong>{todo.title}</strong>
-          <div style={{ fontSize: "0.9rem" }}>
-            {todo.tags.join(", ")}
-          </div>
+          <div style={{ fontSize: "0.9rem" }}>{todo.tags.join(", ")}</div>
         </div>
       ))}
     </div>
