@@ -71,7 +71,8 @@ GraphQL_TS/
    ```env
    MONGO_PWD=xxxxxxxxxxxxxxxxxxxx
    MONGO_USER=xxxxxxxxxxxxxxxxxxxx
-   MONGO_URL=mongodb+srv://<MONGO_USER>:<MONGO_PWD>@cluster0.xxxxxxx.mongodb.net/?appName=Cluster0/todoDB
+   MONGO_URL=mongodb+srv://<MONGO_USER>:<MONGO_PWD>@<YOUR_CLUSTER>.mongodb.net/<YOUR_DB_NAME>?retryWrites=true&w=majority
+   # Get your connection string from MongoDB Atlas → your cluster → Connect → Drivers
    PORT=3000
    ```
 
