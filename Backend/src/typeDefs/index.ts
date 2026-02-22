@@ -8,5 +8,8 @@ type Todo{
 type Query{
     getAllTodos:[Todo]!
 }
+type Mutation{
+    createTodo(title:String!,tags:[String]!):Todo!
+}
 `;
 export default typeDefs;
